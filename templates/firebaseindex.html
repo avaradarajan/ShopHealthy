@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Firebase Demo</title>
+</head>
+<body>
+	<h1 id="data"></h1>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	
+	<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyAnF4I-kl4sDg3QvKzydxruSOA_TVi4irg",
+    authDomain: "shophealthy-58a5d.firebaseapp.com",
+    databaseURL: "https://shophealthy-58a5d.firebaseio.com",
+    projectId: "shophealthy-58a5d",
+    storageBucket: "shophealthy-58a5d.appspot.com",
+    messagingSenderId: "838399846119",
+    appId: "1:838399846119:web:ede4c9955b3e523f74e442"
+  };
+  // Initialize Firebase
+  console.log("wsd ")
+  firebase.initializeApp(firebaseConfig);
+  var preref = document.getElementById('data');
+  var dbref = firebase.database().ref().child('orders');
+  dbref.on('value',snap=> preref.innerText = snap.val());
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+</head>
+
+<body>
+    <h2>SHARK2 Decoder</h2>
+    <table width="50%">
+        <tbody>
+            <tr>
+                <td>
+                    <div id="option">
+                        <input id="getData" name="updateButton" type="button" value="Update"/>
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="divInfo">
+                    </div>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pre id='data'></pre>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+</body>
+
+</html>
