@@ -23,16 +23,16 @@ def init():
     return render_template('index.html')
 
 
-@app.route('/shark2', methods=['POST'])
+@app.route('/home.html', methods=['POST'])
 def shark2():
-
-    start_time = time.time()
-    data = json.loads(request.get_data())
-
-    print(data)
-    end_time = time.time()
-
-    return '{"elapsed_time":"' + str(round((end_time - start_time) * 1000, 5)) + 'ms"}'
+    return render_template('home.html')
+    # start_time = time.time()
+    # data = json.loads(request.get_data())
+    #
+    # print(data)
+    # end_time = time.time()
+    #
+    # return '{"elapsed_time":"' + str(round((end_time - start_time) * 1000, 5)) + 'ms"}'
 
 
 if __name__ == "__main__":
