@@ -73,12 +73,36 @@
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
+	  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', 'Health Score', 'Junk Food Rate'],
+          ['Jul',  400,      1000],
+          ['Aug',  450,      800],
+          ['Sep',  660,       650],
+          ['Oct',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Health Score',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-5" src="{{ url_for('static', filename='home/img/avataaars.svg') }}" alt="">
 
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+      <h4 class="masthead-heading text-uppercase mb-0">Health Score is Improving!! Keep at it</h4>
 
       <!-- Icon Divider -->
       <div class="divider-custom divider-light">
@@ -88,10 +112,8 @@
         </div>
         <div class="divider-custom-line"></div>
       </div>
-
-      <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
-
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+	
     </div>
   </header>
 
@@ -242,23 +264,23 @@
 								</tr>
 
 								<tr class="row100 body">
-									<td class="cell100 column1">Cheetos</td>
-									<td class="cell100 column2">3</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Cheese Puffs</td>
-									<td class="cell100 column2">2</td>
-								</tr>
-
-								<tr class="row100 body">
-									<td class="cell100 column1">Coke</td>
+									<td class="cell100 column1">Chia Seeds</td>
 									<td class="cell100 column2">1</td>
 								</tr>
 
 								<tr class="row100 body">
-									<td class="cell100 column1">Sprite</td>
+									<td class="cell100 column1">Salmon</td>
 									<td class="cell100 column2">2</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Strawberry</td>
+									<td class="cell100 column2">1</td>
+								</tr>
+
+								<tr class="row100 body">
+									<td class="cell100 column1">Natural Lemonade</td>
+									<td class="cell100 column2">1</td>
 								</tr>
 
 								<tr class="row100 body">
@@ -270,20 +292,21 @@
 									<td class="cell100 column1">Yoghurt</td>
 									<td class="cell100 column2">1</td>
 								</tr>
+								
 							</tbody>
 						</table>
 					</div>
         </div>
 		<!-- About Section Button -->
-      <div class="text-center mt-4" style ="position:relative;left:-180px;">
-        <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+      <div class="text-center mt-4" style="position:absolute; top:350px;left:500px;">
+        <a class="btn btn-xl btn-outline-light" style="background-color:#f4a688;color:black" href="https://startbootstrap.com/themes/freelancer/">
           <i class="fas fa-money-check-alt mr-2"></i>
           Place Order
         </a>
       </div>
         <div class="col-lg-4 mr-auto" style="position:relative;left:-15px">
 			<div class="wrap-table100">
-			<caption>PREVIOUS ORDER</caption>
+			<caption align="top">PREVIOUS ORDER</caption>
 				<div class="table100 ver1 m-b-110">
 					<div class="table100-head">
 						<table>
